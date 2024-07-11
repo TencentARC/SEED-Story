@@ -7,7 +7,7 @@
 long stories consists of rich and coherent narrative texts, along with images that are consistent in characters and
 style. We also release the StoryStream Dataset for build this model.
 
-[![multimodal](assets/teaser.png)](https://youtu.be/_t87U1tLiyQ)
+[![image](assets/thumbnail.png)](https://youtu.be/_t87U1tLiyQ)
 *An application demo for SEED-Story. In this demo, we utilize an Image-to-Video model to animate our generated images and employ an AI voice to narrate the accompanying story text.*
 
 ## TODOs
