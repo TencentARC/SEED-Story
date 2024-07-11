@@ -18,11 +18,11 @@ style. We also release the StoryStream Dataset for build this model.
 - [x] Release training code for instruction tuning.
 
 ## Introduction
-The introduced SEED-Story, powered by MLLM, is capable of generating multimodal long stories from user-provided images and texts as the beginning of the story. The generated story consists of rich and coherent narrative texts, along with images that are consistent in characters and style. The story can span up to 25 multimodal sequences, even though we only use a maximum of 10 sequences during training.
+The introduced SEED-Story, powered by MLLM, is capable of **generating multimodal long stories** from user-provided images and texts as the beginning of the story. The generated story consists of rich and coherent narrative texts, along with images that are consistent in characters and style. The story can span up to 25 multimodal sequences, even though we only use a maximum of 10 sequences during training.
 
 <img src="assets/teaser.jpg" width="800" alt="Teaser image">
 
-Overview of the SEED-Story. Training Pipeline: In Stage 1, we pre-trains an SD-XL-based de-tokenizer to reconstruct images by taking the features of a pre-trained ViT as inputs. In Stage 2, we sample an interleaved image-text sequence of a random length and train the MLLM by performing next-word prediction and image feature regression between the output hidden states of the learnable queries and ViT features of the target image. In Stage 3, the regressed image features from the MLLM are fed into the de-tokenizer for tuning SD-XL, enhancing the consistency of the characters and styles in the generated images.
+**Overview of the SEED-Story.** Training Pipeline: In Stage 1, we pre-trains an SD-XL-based de-tokenizer to reconstruct images by taking the features of a pre-trained ViT as inputs. In Stage 2, we sample an interleaved image-text sequence of a random length and train the MLLM by performing next-word prediction and image feature regression between the output hidden states of the learnable queries and ViT features of the target image. In Stage 3, the regressed image features from the MLLM are fed into the de-tokenizer for tuning SD-XL, enhancing the consistency of the characters and styles in the generated images.
 
 <img src="assets/pipeline.jpg" width="800" alt="Pipeline image">
 
@@ -43,7 +43,7 @@ Clone the repo and install dependent packages
   ```
 
 ### Data Preparation
-We release the StoryStream dataset for training and testing multimodal story generation. Download the images and story text files here. [[StoryStream]](https://huggingface.co/datasets/TencentARC/StoryStream).
+We release the StoryStream dataset for training and testing multimodal story generation. Download the images and story text files here. [StoryStream](https://huggingface.co/datasets/TencentARC/StoryStream).
 
 The StoryStream dataset consist of 3 subsets, Curious George, Rabbids Invasion, and The Land Before Time. We take the George subset as an example. 
 The jsonl files contain all the data. Each line of it contains a story of 30 images and corresponding story text. The "image" component is a list of the path of 30 images. The "captions" component is a list of 30 corresponding story text.
@@ -52,7 +52,7 @@ For training efficiency, you may chunk the story into a length of 10 just like w
 
 ### Model Weights
 We release the pretrained Tokenizer, the pretrained De-Tokenizer, the pre-trained foundation model **SEED-X-pretrained**, 
-the StoryStream instruction-tuned MLLM **SEED-Story-George**, and the StoryStream tuned De-Tokenizer in **Detokenizer-George** [SEED-X-17B Hugging Face](https://huggingface.co/TencentARC/SEED-Story).
+the StoryStream instruction-tuned MLLM **SEED-Story-George**, and the StoryStream tuned De-Tokenizer in **Detokenizer-George** [SEED-Story Hugging Face](https://huggingface.co/TencentARC/SEED-Story).
 
 Please download the checkpoints and save them under the folder `./pretrained`.
 
@@ -80,7 +80,7 @@ We evaluate the multimodal generation result with GPT4 API. The script is under 
 
 ### Instruction Tuning
 #### Stage1: Visual Tokenization & De-tokenization
-Please refer to [SEED-X](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0) for Visual Tokenization & De-tokenization.
+Please refer to [SEED-X](https://github.com/AILab-CVC/SEED-X) for Visual Tokenization & De-tokenization.
 
 #### Stage2: Instruction Tuning
 1. Prepare the pretrained models (See Model Weights).
