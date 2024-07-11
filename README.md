@@ -77,6 +77,10 @@ We evaluate the multimodal generation result with GPT4 API. The script is under 
 |----------|----------|----------|----------|
 | GPT4 Eval   | 8.61    | 6.27   | 8.24    |
 
+The comparative evaluation result is shown below.
+
+<img src="assets/quant.jpg" width="800" alt="Pipeline image">
+
 
 ### Instruction Tuning
 #### Stage1: Visual Tokenization & De-tokenization
