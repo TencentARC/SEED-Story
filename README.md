@@ -9,7 +9,7 @@ style. We also release the StoryStream Dataset for build this model.
 
 ## Video Demo
 <a href="https://youtu.be/_t87U1tLiyQ"><img src="assets/thumbnail.png" width="300" height="300" alt="Thumbnail"></a>
-*An application demo for SEED-Story. In this demo, we utilize an Image-to-Video model to animate our generated images and employ an AI voice to narrate the accompanying story text.*
+*Here is a video demo for SEED-Story. Click it to redirect to YouTube! In this demo, we utilize an Image-to-Video model to animate our generated images and employ an AI voice to narrate the accompanying story text.*
 
 ## TODOs
 - [x] Release the StoryStream dataset.
