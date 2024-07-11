@@ -1,0 +1,18 @@
+_target_: src.models_clm.models.ContinuousLVLM.from_pretrained
+input_resampler:
+  _target_: src.models.qwen_visual.Resampler
+  grid_size: 8
+  embed_dim: 4096
+  num_heads: 32
+  kv_dim: 4096
+
+output_resampler:
+  _target_: src.models.qwen_visual.Resampler
+  grid_size: 16
+  embed_dim: 4096
+  num_heads: 32
+  kv_dim: 4096
+
+lm_loss_scale: 1.0
+rec_loss_scale: 1.0
+pretrained_model_path: pretrained/seed_story/george_sft/pytorch_model.bin

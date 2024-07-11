@@ -1,0 +1,4 @@
+_target_: src.processer.transforms.get_transform
+type: sd
+image_size: 1024
+keep_ratio: True

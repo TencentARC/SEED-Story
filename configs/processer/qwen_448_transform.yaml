@@ -1,0 +1,4 @@
+_target_: src.processer.transforms.get_transform
+type: clip
+image_size: 448
+keep_ratio: False

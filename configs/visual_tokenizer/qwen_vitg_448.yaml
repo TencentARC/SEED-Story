@@ -1,0 +1,10 @@
+_target_: src.models.qwen_visual.VisionTransformerWithAttnPool.from_pretrained
+heads: 16
+image_size: 448
+image_start_id": 151857
+layers: 48
+mlp_ratio: 4.9231
+output_dim: 4096
+patch_size: 14
+width: 1664
+pretrained_model_path: pretrained/visual_tokenizer/qwen_vit_G.pt

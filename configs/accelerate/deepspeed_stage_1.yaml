@@ -1,0 +1,7 @@
+_target_: accelerate.DeepSpeedPlugin
+zero_stage: 1
+# hf_ds_config: 
+#   _target_: accelerate.utils.deepspeed.HfDeepSpeedConfig
+#   _convert_: object
+#   config_file_or_dict:
+#     train_micro_batch_size_per_gpu: 150

@@ -1,0 +1,37 @@
+_target_: src.models_clm.peft_models.get_peft_model_with_resize_embedding
+model:
+  _target_: src.models_clm.modeling_llama_xformer.LlamaForCausalLM.from_pretrained
+  # _target_: transformers.LlamaForCausalLM.from_pretrained
+  pretrained_model_name_or_path: pretrained/Llama-2-7b-hf
+  low_cpu_mem_usage: True
+peft_config:
+  _target_: peft.LoraConfig
+  _convert_: object
+  r: 16
+  lora_alpha: 32
+  modules_to_save:
+    # - embed_tokens
+    # - lm_head
+    - input_layernorm
+    - post_attention_layernorm
+    - norm
+  target_modules: 
+    - q_proj 
+    - v_proj 
+    - k_proj 
+    - o_proj 
+    - gate_proj 
+    - down_proj 
+    - up_proj
+  task_type: CAUSAL_LM
+  lora_dropout: 0.05
+
+vocab_size: 32066
+# _target_: src.models_clm.peft_models.get_model_with_resize_embedding
+# model:
+#   # _target_: src.models_clm.modeling_llama_xformer.LlamaForCausalLM.from_pretrained
+#   _target_: transformers.LlamaForCausalLM.from_pretrained
+#   pretrained_model_name_or_path: /apdcephfs_cq3/share_1290939/sijiezhao/model_hub/Llama-2-7b-hf
+#   low_cpu_mem_usage: True
+
+# vocab_size: 32066

@@ -1,0 +1,15 @@
+_target_: src.models_ipa.adapter_modules.SDXLAdapter.from_pretrained
+
+resampler: 
+  _target_: src.models_ipa.resampler.ResamplerXLV2
+  dim: 1024
+  depth: 4
+  dim_head: 64
+  heads: 16
+  num_queries: 64
+  embedding_dim: 4096
+  output1_dim: 768
+  output2_dim: 1280
+  ff_mult: 4
+
+pretrained_model_path: pretrained/detokenizer_pretrained/checkpoint-55000/pytorch_model.bin

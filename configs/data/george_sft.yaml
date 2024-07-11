@@ -1,0 +1,19 @@
+_target_: src.data.story_telling.build_multi_datapipes
+_recursive_: False
+datapipes:
+  - _target_: src.data.story_telling.build_long_story_datapipe
+    data_dir: data/json/george_train10
+    image_dir: data/image/george_full
+    max_length: 1280
+    batch_size: 30
+    instruction_prompt: "{instruction}"
+    # turn_sep: '\n'
+    min_aspect_ratio: 0.2
+    min_resolution: 128
+    num_img_in_tokens: 64
+    num_img_out_tokens: 64
+    cycle_count: 10000
+    story_len: 10
+
+sample_weights:
+  - 1.0  # llava

@@ -1,0 +1,9 @@
+_target_: accelerate.FullyShardedDataParallelPlugin
+state_dict_config:
+  _target_: torch.distributed.fsdp.fully_sharded_data_parallel.FullStateDictConfig
+  offload_to_cpu: False
+  rank0_only: False
+optim_state_dict_config: 
+  _target_: torch.distributed.fsdp.fully_sharded_data_parallel.FullOptimStateDictConfig
+  offload_to_cpu: False
+  rank0_only: False

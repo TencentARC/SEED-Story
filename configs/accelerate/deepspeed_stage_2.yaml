@@ -1,0 +1,2 @@
+_target_: accelerate.DeepSpeedPlugin
+hf_ds_config: configs/accelerate/stage2_bf16_dp.json
