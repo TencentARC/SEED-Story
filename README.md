@@ -8,8 +8,8 @@ long stories consists of rich and coherent narrative texts, along with images th
 style. We also release the StoryStream Dataset for build this model.
 
 ## Video Demo
-*An application demo for SEED-Story. In this demo, we utilize an Image-to-Video model to animate our generated images and employ an AI voice to narrate the accompanying story text.*
 <a href="https://youtu.be/_t87U1tLiyQ"><img src="assets/thumbnail.png" width="300" height="300" alt="Thumbnail"></a>
+*An application demo for SEED-Story. In this demo, we utilize an Image-to-Video model to animate our generated images and employ an AI voice to narrate the accompanying story text.*
 
 ## TODOs
 - [x] Release the StoryStream dataset.
@@ -22,7 +22,7 @@ The introduced SEED-Story, powered by MLLM, is capable of generating multimodal 
 
 
 Overview of the SEED-Story. Training Pipeline: In Stage 1, we pre-trains an SD-XL-based de-tokenizer to reconstruct images by taking the features of a pre-trained ViT as inputs. In Stage 2, we sample an interleaved image-text sequence of a random length and train the MLLM by performing next-word prediction and image feature regression between the output hidden states of the learnable queries and ViT features of the target image. In Stage 3, the regressed image features from the MLLM are fed into the de-tokenizer for tuning SD-XL, enhancing the consistency of the characters and styles in the generated images.
-<img src="assets/pipeline.jpg" width="800" alt="Pipeline image">
+<img src="assets/pipeline.png" width="800" alt="Pipeline image">
 
 
 
