@@ -1,5 +1,5 @@
 # SEED-Story
-[![arXiv](https://img.shields.io/badge/arXiv-2404.14396-b31b1b.svg)](https://arxiv.org/)
+[![arXiv](https://img.shields.io/badge/arXiv-2407.08683-b31b1b.svg)](https://arxiv.org/abs/2407.08683)
 [![Static Badge](https://img.shields.io/badge/Model-Huggingface-yellow)](https://huggingface.co/TencentARC/SEED-Story)
 [![Static Badge](https://img.shields.io/badge/Dataset-Huggingface-yellow)](https://huggingface.co/datasets/TencentARC/StoryStream)
 
@@ -115,11 +115,14 @@ bash scripts/adapt_storystream.sh
 ## Citation
 If you find the work helpful, please consider citing:
 ```bash
-@article{ge2024seed,
-  title={SEED-X: Multimodal Models with Unified Multi-granularity Comprehension and Generation},
-  author={Ge, Yuying and Zhao, Sijie and Zhu, Jinguo and Ge, Yixiao and Yi, Kun and Song, Lin and Li, Chen and Ding, Xiaohan and Shan, Ying},
-  journal={arXiv preprint arXiv:2404.14396},
-  year={2024}
+@misc{yang2024seedstorymultimodallongstory,
+      title={SEED-Story: Multimodal Long Story Generation with Large Language Model}, 
+      author={Shuai Yang and Yuying Ge and Yang Li and Yukang Chen and Yixiao Ge and Ying Shan and Yingcong Chen},
+      year={2024},
+      eprint={2407.08683},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2407.08683}, 
 }
 ```
 
