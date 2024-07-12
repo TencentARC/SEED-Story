@@ -10,7 +10,7 @@ style. We also release the StoryStream Dataset to build this model.
 ## Video Demo
 <a href="https://youtu.be/_t87U1tLiyQ"><img src="assets/thumbnail.jpg" width="300" height="300" alt="Thumbnail"></a>
 
-*Here is a video demo for SEED-Story. Click it to redirect to YouTube! In this demo, we utilize an Image-to-Video model to animate our generated images and employ an AI voice to narrate the accompanying story text. We sincerely thank [Meixi Chen](https://github.com/TencentARC/SEED-Story) for producing this demo.*
+*Here is a video demo for SEED-Story. Click it to redirect to YouTube! In this demo, we utilize an Image-to-Video model to animate our generated images and employ an AI voice to narrate the accompanying story text. We sincerely thank Meixi Chen for producing this demo.*
 
 ## TODOs
 - [x] Release the StoryStream dataset.
