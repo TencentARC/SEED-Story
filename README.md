@@ -3,14 +3,17 @@
 [![Static Badge](https://img.shields.io/badge/Model-Huggingface-yellow)](https://huggingface.co/TencentARC/SEED-Story)
 [![Static Badge](https://img.shields.io/badge/Dataset-Huggingface-yellow)](https://huggingface.co/datasets/TencentARC/StoryStream)
 
+We introduce SEED-Story, a MLLM capable of generating multimodal long stories consisting of rich and coherent narrative texts, along with images that are consistent in characters and style, based on [SEED-X](https://github.com/AILab-CVC/SEED-X). 
+We also release StoryStream, a large-scale dataset specifically designed for training and benchmarking multimodal story generation.
+
+<img src="assets/teaser.jpg" width="800" alt="Teaser image">
+<!---
 **TL;DR:** We introduce SEED-Story, a MLLM capable of generating multimodal
 long stories consisting of rich and coherent narrative texts, along with images that are consistent in characters and
 style. We also release the StoryStream Dataset to build this model.
+-->
 
-## Video Demo
-<a href="https://youtu.be/_t87U1tLiyQ"><img src="assets/thumbnail.jpg" width="300" height="300" alt="Thumbnail"></a>
 
-*Here is a video demo for SEED-Story. Click it to redirect to YouTube! In this demo, we utilize an Image-to-Video model to animate our generated images and employ an AI voice to narrate the accompanying story text. We sincerely thank Meixi Chen for producing this demo.*
 
 ## TODOs
 - [x] Release the StoryStream dataset.
@@ -20,11 +23,27 @@ style. We also release the StoryStream Dataset to build this model.
 ## Introduction
 The introduced SEED-Story, powered by MLLM, is capable of **generating multimodal long stories** from user-provided images and texts as the beginning of the story. The generated story consists of rich and coherent narrative texts, along with images that are consistent in characters and style. The story can span up to 25 multimodal sequences, even though we only use a maximum of 10 sequences during training.
 
-<img src="assets/teaser.jpg" width="800" alt="Teaser image">
+<img src="assets/gen_case1.jpg" width="800" alt="Teaser image">
 
-**Overview of the SEED-Story.** Training Pipeline: In Stage 1, we pre-train an SD-XL-based de-tokenizer to reconstruct images by taking the features of a pre-trained ViT as inputs. In Stage 2, we sample an interleaved image-text sequence of a random length and train the MLLM by performing next-word prediction and image feature regression between the output hidden states of the learnable queries and ViT features of the target image. In Stage 3, the regressed image features from the MLLM are fed into the de-tokenizer for tuning SD-XL, enhancing the consistency of the characters and styles in the generated images.
+Given the same initial image but different openinig text, SEED-Story can generate different multimodal stories. The top branch starts with text referencing “the man in the yellow hat,” leading to images that include the character. The bottom branch starts without mentioning the man, resulting in stories that diverge from the first by excluding him.
+
+
+<img src="assets/multi_gen_case.jpg" width="800" alt="Teaser image">
+
+
+## Method
+In **Stage 1**, we pre-train an SD-XL-based de-tokenizer to reconstruct images by taking the features of a pre-trained ViT as inputs. 
+
+In **Stage 2**, we sample an interleaved image-text sequence of a random length and train the MLLM by performing next-word prediction and image feature regression between the output hidden states of the learnable queries and ViT features of the target image. 
+
+In **Stage 3**, the regressed image features from the MLLM are fed into the de-tokenizer for tuning SD-XL, enhancing the consistency of the characters and styles in the generated images.
 
 <img src="assets/pipeline.jpg" width="800" alt="Pipeline image">
+
+## Video Demo
+<a href="https://youtu.be/_t87U1tLiyQ"><img src="assets/thumbnail.jpg" width="300" height="300" alt="Thumbnail"></a>
+
+*Here is a video demo for SEED-Story. Click it to redirect to YouTube! In this demo, we utilize an Image-to-Video model to animate our generated images and employ an AI voice to narrate the accompanying story text. We sincerely thank Meixi Chen for producing this demo.*
 
 ## Usage
 
@@ -43,9 +62,10 @@ Clone the repo and install dependent packages
   ```
 
 ### Data Preparation
-We release the StoryStream dataset for training and testing multimodal story generation. Download the images and story text files here. [StoryStream](https://huggingface.co/datasets/TencentARC/StoryStream).
+We release the StoryStream dataset for training and testing multimodal story generation. Download the images and story text files in [StoryStream](https://huggingface.co/datasets/TencentARC/StoryStream).
 
 The StoryStream dataset consists of 3 subsets, Curious George, Rabbids Invasion, and The Land Before Time. We take the George subset as an example. 
+
 The jsonl files contain all the data. Each line of it contains a story of 30 images and corresponding story text. The "image" component is a list of the path of 30 images. The "captions" component is a list of 30 corresponding story text.
 
 For training efficiency, you may chunk the story into a length of 10 just like we did. The script for chunking is in `./StoryStream/chunk_data.py`.
