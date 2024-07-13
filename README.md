@@ -25,7 +25,7 @@ The introduced SEED-Story, powered by MLLM, is capable of **generating multimoda
 
 <img src="assets/gen_case1.jpg" width="800" alt="Teaser image">
 
-Given the same initial image but different openinig text, SEED-Story can generate different multimodal stories. The top branch starts with text referencing “the man in the yellow hat,” leading to images that include the character. The bottom branch starts without mentioning the man, resulting in stories that diverge from the first by excluding him.
+Given the same initial image but different opening text, SEED-Story can generate different multimodal stories. The top branch starts with text referencing “the man in the yellow hat,” leading to images that include the character. The bottom branch starts without mentioning the man, resulting in stories that diverge from the first by excluding him.
 
 
 <img src="assets/multi_gen_case.jpg" width="800" alt="Teaser image">
