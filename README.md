@@ -135,13 +135,11 @@ bash scripts/adapt_storystream.sh
 ## Citation
 If you find the work helpful, please consider citing:
 ```bash
-@misc{yang2024seedstorymultimodallongstory,
+@article{yang2024seedstory,
       title={SEED-Story: Multimodal Long Story Generation with Large Language Model}, 
       author={Shuai Yang and Yuying Ge and Yang Li and Yukang Chen and Yixiao Ge and Ying Shan and Yingcong Chen},
       year={2024},
-      eprint={2407.08683},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
+      journal={arXiv preprint arXiv:2407.08683},
       url={https://arxiv.org/abs/2407.08683}, 
 }
 ```
