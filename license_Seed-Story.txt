@@ -71,13 +71,29 @@ Other dependencies and licenses:
 
 Open Source Software Licensed under the Apache License Version 2.0:
 --------------------------------------------------------------------
-1. transformers
-Copyright 2018- The Hugging Face team. All rights reserved.
-Source code of this software can be obtained from: https://github.com/huggingface/transformers/blob/v4.30.2/
+1. accelerate
+Copyright 2021 The HuggingFace Team. All rights reserved.
+Source code of this software can be obtained from: https://pypi.org/project/accelerate/
 
-2. diffusers
+2. deepspeed
+Copyright (c) Microsoft Corporation.
+Source code of this software can be obtained from: https://pypi.org/project/deepspeed
+
+3. diffusers
 Copyright 2023 The HuggingFace Team. All rights reserved.
-Source code of this software can be obtained from: https://github.com/huggingface/diffusers/blob/v0.25.0/
+Source code of this software can be obtained from: https://pypi.org/project/diffusers
+
+4. peft
+Copyright 2023 The HuggingFace Team. All rights reserved.
+Source code of this software can be obtained from: https://pypi.org/project/peft/
+
+5. tokenizers
+Copyright (c) 2020, huggingface
+Source code of this software can be obtained from: https://pypi.org/project/tokenizers/
+
+6. transformers
+Copyright 2018- The Hugging Face team. All rights reserved.
+Source code of this software can be obtained from: https://pypi.org/project/transformers/
 
 A copy of Apache 2.0 has been included in this file.
 
