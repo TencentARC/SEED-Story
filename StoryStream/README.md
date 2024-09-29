@@ -1,5 +1,4 @@
 # StoryStream Dataset
-[![Huggingface Dataset](https://img.shields.io/badge/Dataset-Huggingface-yellow)](https://huggingface.co/datasets/TencentARC/StoryStream)
 
 ## Introduction
 The StoryStream dataset is an innovative resource aimed at advancing multimodal story generation. Originating from popular cartoon series, this dataset includes a comprehensive collection of detailed narratives and high resolution images. It is designed to support the creation of long story sequences. 
