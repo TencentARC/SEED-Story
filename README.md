@@ -1,6 +1,6 @@
 # SEED-Story
 
-We introduce SEED-Story, a MLLM capable of generating multimodal long stories consisting of rich and coherent narrative texts, along with images that are consistent in characters and style, based on [SEED-X](https://github.com/AILab-CVC/SEED-X). 
+We introduce SEED-Story, a MLLM capable of generating multimodal long stories consisting of rich and coherent narrative texts, along with images that are consistent in characters and style, based on SEED-X. 
 We also release StoryStream, a large-scale dataset specifically designed for training and benchmarking multimodal story generation.
 
 <img src="assets/teaser.jpg" width="800" alt="Teaser image">
