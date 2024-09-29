@@ -1,7 +1,4 @@
 # SEED-Story
-[![arXiv](https://img.shields.io/badge/arXiv-2407.08683-b31b1b.svg)](https://arxiv.org/abs/2407.08683)
-[![Static Badge](https://img.shields.io/badge/Model-Huggingface-yellow)](https://huggingface.co/TencentARC/SEED-Story)
-[![Static Badge](https://img.shields.io/badge/Dataset-Huggingface-yellow)](https://huggingface.co/datasets/TencentARC/StoryStream)
 
 We introduce SEED-Story, a MLLM capable of generating multimodal long stories consisting of rich and coherent narrative texts, along with images that are consistent in characters and style, based on [SEED-X](https://github.com/AILab-CVC/SEED-X). 
 We also release StoryStream, a large-scale dataset specifically designed for training and benchmarking multimodal story generation.
@@ -12,13 +9,6 @@ We also release StoryStream, a large-scale dataset specifically designed for tra
 long stories consisting of rich and coherent narrative texts, along with images that are consistent in characters and
 style. We also release the StoryStream Dataset to build this model.
 -->
-
-
-
-## TODOs
-- [x] Release the StoryStream dataset.
-- [x] Release inference code and model checkpoints.
-- [x] Release training code for instruction tuning.
 
 ## Introduction
 The introduced SEED-Story, powered by MLLM, is capable of **generating multimodal long stories** from user-provided images and texts as the beginning of the story. The generated story consists of rich and coherent narrative texts, along with images that are consistent in characters and style. The story can span up to 25 multimodal sequences, even though we only use a maximum of 10 sequences during training.
@@ -40,11 +30,6 @@ In **Stage 3**, the regressed image features from the MLLM are fed into the de-t
 
 <img src="assets/pipeline.jpg" width="800" alt="Pipeline image">
 
-## Video Demo
-<a href="https://youtu.be/_t87U1tLiyQ"><img src="assets/thumbnail.jpg" width="300" height="300" alt="Thumbnail"></a>
-
-*Here is a video demo for SEED-Story. Click it to redirect to YouTube! In this demo, we utilize an Image-to-Video model to animate our generated images and employ an AI voice to narrate the accompanying story text. We sincerely thank Meixi Chen for producing this demo.*
-
 ## Usage
 
 ### Dependencies
@@ -62,8 +47,7 @@ Clone the repo and install dependent packages
   ```
 
 ### Data Preparation
-We release the StoryStream dataset for training and testing multimodal story generation. Download the images and story text files in [StoryStream](https://huggingface.co/datasets/TencentARC/StoryStream).
-
+We release the StoryStream dataset for training and testing multimodal story generation.
 The StoryStream dataset consists of 3 subsets, Curious George, Rabbids Invasion, and The Land Before Time. We take the George subset as an example. 
 
 The jsonl files contain all the data. Each line of it contains a story of 30 images and corresponding story text. The "image" component is a list of the path of 30 images. The "captions" component is a list of 30 corresponding story text.
@@ -72,7 +56,7 @@ For training efficiency, you may chunk the story into a length of 10 just like w
 
 ### Model Weights
 We release the pre trained Tokenizer, the pre-trained De-Tokenizer, the pre-trained foundation model **SEED-X-pretrained**, 
-the StoryStream instruction-tuned MLLM **SEED-Story-George**, and the StoryStream tuned De-Tokenizer in **Detokenizer-George** [SEED-Story Hugging Face](https://huggingface.co/TencentARC/SEED-Story).
+the StoryStream instruction-tuned MLLM **SEED-Story-George**, and the StoryStream tuned De-Tokenizer in **Detokenizer-George**
 
 Please download the checkpoints and save them under the folder `./pretrained`.
 
@@ -104,7 +88,7 @@ The comparative evaluation result is shown below.
 
 ### Instruction Tuning
 #### Stage1: Visual Tokenization & De-tokenization
-Please refer to [SEED-X](https://github.com/AILab-CVC/SEED-X) for Visual Tokenization & De-tokenization.
+Please refer to SEED-X for Visual Tokenization & De-tokenization.
 
 #### Stage2: Instruction Tuning
 1. Prepare the pre-trained models (See Model Weights).
@@ -131,19 +115,3 @@ pretrained_model_path: train_output/seed_story/checkpoint-6000/pytorch_model.bin
 ```bash
 bash scripts/adapt_storystream.sh
 ```
-
-## Citation
-If you find the work helpful, please consider citing:
-```bash
-@article{yang2024seedstory,
-      title={SEED-Story: Multimodal Long Story Generation with Large Language Model}, 
-      author={Shuai Yang and Yuying Ge and Yang Li and Yukang Chen and Yixiao Ge and Ying Shan and Yingcong Chen},
-      year={2024},
-      journal={arXiv preprint arXiv:2407.08683},
-      url={https://arxiv.org/abs/2407.08683}, 
-}
-```
-
-
-## License
-`SEED-Story` is licensed under the Apache License Version 2.0 except for the third-party components listed in [License](License_Seed-Story.txt).
