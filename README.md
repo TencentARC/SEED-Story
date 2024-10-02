@@ -1,5 +1,8 @@
 # SEED-Story
 
+[![Static Badge](https://img.shields.io/badge/Model-Huggingface-yellow)](https://huggingface.co/seedstory/seed-story)
+
+
 We introduce SEED-Story, a MLLM capable of generating multimodal long stories consisting of rich and coherent narrative texts, along with images that are consistent in characters and style, based on SEED-X. 
 We also release StoryStream, a large-scale dataset specifically designed for training and benchmarking multimodal story generation.
 
