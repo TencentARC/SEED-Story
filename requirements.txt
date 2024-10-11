@@ -57,4 +57,4 @@ xformers==0.0.23.post1
 zipp==3.18.1
 hydra
 pyrootutils
-torchdata
+torchdata==0.7.1
